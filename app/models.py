@@ -1,4 +1,4 @@
-from sqlalchemy import MetaData, Table, Column, Integer, String, Numeric, TIMESTAMP, ForeignKey, Boolean, func
+from sqlalchemy import MetaData, Table, Column, Integer,  Numeric, TIMESTAMP, ForeignKey, func
 
 metadata = MetaData()
 
@@ -42,7 +42,7 @@ volume_data = Table(
 amplitude_change = Table(
     "amplitude_change",
     metadata,
-    Column("id", Integer, primary_key = True), #Над этим тоже нужно буджет подумать
+    Column("id", Integer, primary_key = True),
     Column("future_prices_id", Integer, ForeignKey(future_prices.c.id)),
     Column("previous_close_amplitude",Numeric, nullable=False),
     Column("amplitude_change",Numeric, nullable=False),
